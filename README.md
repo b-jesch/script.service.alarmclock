@@ -23,15 +23,5 @@ or an URL on repeat.
     sure the start time of any alarm plus its duration is before 0:00.
 
 #Credits
-  - Cron-like helper classes CronTab and Event inspired by an answer by
-    Brian on
-    http://stackoverflow.com/questions/373335/suggestions-for-a-cron-like-scheduler-in-python/374207#374207
-
-  - Clock clip art https://openclipart.org/detail/12591/alarm-clock-by-anonymous-12591
-
-  - fanart.jpg: a blend of
-    http://commons.wikimedia.org/wiki/File:Sunrise_DUS.JPG
-    and
-    http://colouringbook.org/art/svg/coloring-book/orologio-clock-alarm-icon-coloring-book-colouring-coloring-book-colouring-book-colouringbook-org-art-clip-art-clipart-clipartist-net-openclipart-org-scalable-vector-graphics-svg/
-   
-  - Activation of HDMI device with CECActivateSource added by pull request by https://github.com/anonymouzz
+  - Adapted and updated to Matrix from the original Addon "XBMC Alarm clock"
+    by remigius: https://github.com/remigius42-old/script.service.alarmclock
