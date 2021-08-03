@@ -1,6 +1,6 @@
 [![Build Status](https://travis-ci.org/remigius42/script.service.alarmclock.svg?branch=master)](https://travis-ci.org/remigius42/script.service.alarmclock)
 
-xbmc-alarm-clock
+Kodi alarmclock
 ================
 
 The add-on provides five individual alarms for XBMC playing either a file 
@@ -25,3 +25,4 @@ or an URL on repeat.
 #Credits
   - Adapted and updated to Matrix from the original Addon "XBMC Alarm clock"
     by remigius: https://github.com/remigius42-old/script.service.alarmclock
+  - Note: Addon name has changed from "XBMC Alarm Clock" to "Kodi Alarm Clock". 
