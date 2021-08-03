@@ -41,8 +41,9 @@ class CronTab(object):
                 job.check(cron_time_tuple)
             cron_time_tuple += timedelta(minutes=1)
             if datetime.now() < cron_time_tuple:
-                xbmc.sleep((cron_time_tuple - datetime.now()).seconds * 1000)
-
+                xbmc.Monitor().waitForAbort((cron_time_tuple - datetime.now()).seconds)
+                # xbmc.sleep((cron_time_tuple - datetime.now()).seconds * 1000)
+        log('Cron finished')
 
 class Job(object):
     """

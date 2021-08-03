@@ -5,6 +5,7 @@ Startup script for the Kodi alarm clock add-on.
 import os
 import xbmcvfs
 from resources.lib.cronjobs import *
+
 media = os.path.join(xbmcvfs.translatePath(addon.getAddonInfo('path')), 'resources', 'media', 'alert.mp3')
 
 
@@ -42,7 +43,7 @@ def get_jobs(number):
 
     action = addon.getSetting("action%d" % number)
     if action == "0":
-        file_name = addon.getSetting("file%d" % number) if addon.getSetting("file%d" % number) != 'alert.mp3' else media
+        file_name = media if addon.getSetting("file%d" % number) == 'alert.mp3' else addon.getSetting("file%d" % number)
     else:
         file_name = addon.getSetting("text%d" % number)
 
