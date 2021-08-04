@@ -22,6 +22,7 @@ class CronTab(object):
 
     def __init__(self):
         self.jobs = []
+        self.monitor = xbmc.Monitor()
         self.__enabled = True
 
     def stop(self):
@@ -35,15 +36,15 @@ class CronTab(object):
         Starts to check every minute, if the registered jobs should run.
         """
         cron_time_tuple = datetime(*datetime.now().timetuple()[:5])
-        while self.__enabled and not xbmc.Monitor().abortRequested():
+        while self.__enabled and not self.monitor.abortRequested():
             for job in self.jobs:
                 log("checking job #%s: (%02d:%02d [%s])" % (job.job_num, job.hours, job.mins, job.dow))
                 job.check(cron_time_tuple)
             cron_time_tuple += timedelta(minutes=1)
             if datetime.now() < cron_time_tuple:
-                xbmc.Monitor().waitForAbort((cron_time_tuple - datetime.now()).seconds)
-                # xbmc.sleep((cron_time_tuple - datetime.now()).seconds * 1000)
+                self.monitor.waitForAbort((cron_time_tuple - datetime.now()).seconds)
         log('Cron finished')
+
 
 class Job(object):
     """

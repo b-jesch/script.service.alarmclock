@@ -20,11 +20,7 @@ def _start_playing(item, volume):
     """
     Starts playing the given item at the supplied volume.
     """
-    try:
-        xbmc.executebuiltin('CECActivateSource')
-    except Exception:
-        log("CECActivateSource not supported", xbmc.LOGERROR)
-
+    xbmc.executebuiltin('CECActivateSource')
     xbmc.executebuiltin('SetVolume(%s)' % volume)
     xbmc.Player().play(item)
 

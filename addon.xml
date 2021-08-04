@@ -5,13 +5,13 @@
   </requires>
   <extension point="xbmc.service" library="default.py" start="startup" />
   <extension point="xbmc.addon.metadata">
-    <summary lang="en">Provides an alarm clock for XBMC.</summary>
-    <description lang="en">The add-on provides five individual alarms for XBMC playing either a file or an URL on repeat.
+    <summary lang="en">Provides an alarm clock for Kodi.</summary>
+    <description lang="en">The add-on provides five individual alarms for Kodi playing either a file or an URL on repeat.
 
 Features
 - Up to five individual alarms
 - Scheduling for a week day, every day or Monday to Friday
-- Plays either a file or a custom path may be set which may point to any media type supported by XBMC including for example web radio URLs
+- Plays either a file or a custom path may be set which may point to any media type supported by Kodi including for example web radio URLs
 - Tries to activate the configured HDMI device over CEC
 
 Notes
