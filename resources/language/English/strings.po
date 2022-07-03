@@ -118,3 +118,15 @@ msgstr ""
 msgctxt "#30028"
 msgid "Everyday"
 msgstr ""
+
+msgctxt "#30030"
+msgid "Fade in Volume"
+msgstr ""
+
+msgctxt "#30031"
+msgid "from"
+msgstr ""
+
+msgctxt "#30032"
+msgid "Fade Duration in seconds"
+msgstr ""

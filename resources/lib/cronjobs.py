@@ -41,8 +41,10 @@ class CronTab(object):
                 log("checking job #%s: (%02d:%02d [%s])" % (job.job_num, job.hours, job.mins, job.dow))
                 job.check(cron_time_tuple)
             cron_time_tuple += timedelta(minutes=1)
-            if datetime.now() < cron_time_tuple:
-                self.monitor.waitForAbort((cron_time_tuple - datetime.now()).seconds)
+            if 1 <= (cron_time_tuple - datetime.now()).seconds + 1 <= 60:
+                self.monitor.waitForAbort((cron_time_tuple - datetime.now()).seconds + 1)
+            else:
+                self.monitor.waitForAbort(30)
         log('Cron finished')
 
 

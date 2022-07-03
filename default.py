@@ -3,6 +3,8 @@ Startup script for the Kodi alarm clock add-on.
 """
 
 import os
+
+import xbmc
 import xbmcvfs
 from resources.lib.cronjobs import *
 
@@ -16,13 +18,22 @@ def _stop_playing():
     xbmc.Player().stop()
 
 
-def _start_playing(item, volume):
+def _start_playing(item, volume, fade, startvolume, fadetime):
     """
     Starts playing the given item at the supplied volume.
     """
+
     xbmc.executebuiltin('CECActivateSource')
-    xbmc.executebuiltin('SetVolume(%s)' % volume)
-    xbmc.Player().play(item)
+    if not fade or startvolume >= volume:
+        xbmc.executebuiltin('SetVolume(%s)' % volume)
+        xbmc.Player().play(item)
+    else:
+        xbmc.executebuiltin('SetVolume(%s)' % startvolume)
+        xbmc.Player().play(item)
+        xbmc.sleep(2000)
+        for i in range(0, volume - startvolume):
+            xbmc.executebuiltin('SetVolume(%s)' % (startvolume + i))
+            xbmc.sleep(fadetime * 1000 // (volume - startvolume))
 
 
 def get_jobs(number):
@@ -37,6 +48,11 @@ def get_jobs(number):
     if days_of_week == 8:
         days_of_week = range(7)
 
+    fade = True if addon.getSetting("fade%d" % number).lower() == "true" else False
+    startvolume = int(addon.getSetting("start_volume%d" % number))
+    volume = int(addon.getSetting("volume%d" % number))
+    fadetime = int(addon.getSetting("fadetime%d" % number))
+
     action = addon.getSetting("action%d" % number)
     if action == "0":
         file_name = media if addon.getSetting("file%d" % number) == 'alert.mp3' else addon.getSetting("file%d" % number)
@@ -48,7 +64,11 @@ def get_jobs(number):
                 int(addon.getSetting("minute%d" % number)),
                 int(addon.getSetting("hour%d" % number)),
                 dow=days_of_week,
-                args=[file_name, addon.getSetting("volume%d" % number)])]
+                args=[file_name,
+                      volume,
+                      fade,
+                      startvolume,
+                      fadetime])]
 
     if addon.getSetting("turnOff%d" % number) == "true":
         jobs.append(Job(number,

@@ -9,8 +9,11 @@
     <setting label="30013" type="file" id="file1" default="alert.mp3" visible="eq(-1,0)" enable="eq(-5,true)" />
     <setting label="30013" type="text" id="text1" default="" visible="eq(-2,1)" enable="eq(-6,true)" />
     <setting label="30009" type="slider" id="volume1" default="30" range="0, 5, 100" option="percent" enable="eq(-7,true)" />
-    <setting label="30018" type="bool" id="turnOff1" default="false" enable="eq(-8,true)" />
-    <setting label="30019" type="slider" id="duration1" default="30" range="5, 5, 120" option="int" enable="eq(-1,true)" />
+    <setting label="30030" type="bool" id="fade1" default="false" enable="eq(-8,true)" />
+    <setting label="30031" type="slider" subsetting="true" id="start_volume1" default="20" range="0,1,30" option="percent" enable="eq(-9,true) + eq(-1,true)" />
+    <setting label="30032" type="slider" subsetting="true" id="fadetime1" default="3" range="1,1,10" option="int" enable="eq(-10,true) + eq(-2,true)" />
+    <setting label="30018" type="bool" id="turnOff1" default="false" enable="eq(-11,true)" />
+    <setting label="30019" type="slider" subsetting="true" id="duration1" default="30" range="5, 5, 120" option="int" enable="eq(-1,true)" />
   </category>
   <category label="30002">
     <setting label="30014" type="bool" id="alarm2" default="false"/>
@@ -21,8 +24,11 @@
     <setting label="30013" type="file" id="file2" default="alert.mp3" visible="eq(-1,0)" enable="eq(-5,true)" />
     <setting label="30013" type="text" id="text2" default="" visible="eq(-2,1)" enable="eq(-6,true)" />
     <setting label="30009" type="slider" id="volume2" default="30" range="0, 5, 100" option="percent" enable="eq(-7,true)" />
-    <setting label="30018" type="bool" id="turnOff2" default="false" enable="eq(-8,true)" />
-    <setting label="30019" type="slider" id="duration2" default="30" range="5, 5, 120" option="int" enable="eq(-1,true)" />
+    <setting label="30030" type="bool" id="fade2" default="false" enable="eq(-8,true)" />
+    <setting label="30031" type="slider" subsetting="true" id="start_volume2" default="20" range="0,1,30" option="percent" enable="eq(-9,true) + eq(-1,true)" />
+    <setting label="30032" type="slider" subsetting="true" id="fadetime2" default="3" range="1,1,10" option="int" enable="eq(-10,true) + eq(-2,true)" />
+    <setting label="30018" type="bool" id="turnOff2" default="false" enable="eq(-11,true)" />
+    <setting label="30019" type="slider" subsetting="true" id="duration2" default="30" range="5, 5, 120" option="int" enable="eq(-1,true)" />
   </category>
   <category label="30003">
     <setting label="30014" type="bool" id="alarm3" default="false"/>
@@ -33,8 +39,11 @@
     <setting label="30013" type="file" id="file3" default="alert.mp3" visible="eq(-1,0)" enable="eq(-5,true)" />
     <setting label="30013" type="text" id="text3" default="" visible="eq(-2,1)" enable="eq(-6,true)" />
     <setting label="30009" type="slider" id="volume3" default="30" range="0, 5, 100" option="percent" enable="eq(-7,true)" />
-    <setting label="30018" type="bool" id="turnOff3" default="false" enable="eq(-8,true)" />
-    <setting label="30019" type="slider" id="duration3" default="30" range="5, 5, 120" option="int" enable="eq(-1,true)" />
+    <setting label="30030" type="bool" id="fade3" default="false" enable="eq(-8,true)" />
+    <setting label="30031" type="slider" subsetting="true" id="start_volume3" default="20" range="0,1,30" option="percent" enable="eq(-9,true) + eq(-1,true)" />
+    <setting label="30032" type="slider" subsetting="true" id="fadetime3" default="3" range="1,1,10" option="int" enable="eq(-10,true) + eq(-2,true)" />
+    <setting label="30018" type="bool" id="turnOff3" default="false" enable="eq(-11,true)" />
+    <setting label="30019" type="slider" subsetting="true" id="duration3" default="30" range="5, 5, 120" option="int" enable="eq(-1,true)" />
   </category>
   <category label="30004">
     <setting label="30014" type="bool" id="alarm4" default="false"/>
@@ -45,8 +54,11 @@
     <setting label="30013" type="file" id="file4" default="alert.mp3" visible="eq(-1,0)" enable="eq(-5,true)" />
     <setting label="30013" type="text" id="text4" default="" visible="eq(-2,1)" enable="eq(-6,true)" />
     <setting label="30009" type="slider" id="volume4" default="30" range="0, 5, 100" option="percent" enable="eq(-7,true)" />
-    <setting label="30018" type="bool" id="turnOff4" default="false" enable="eq(-8,true)" />
-    <setting label="30019" type="slider" id="duration4" default="30" range="5, 5, 120" option="int" enable="eq(-1,true)" />
+    <setting label="30030" type="bool" id="fade4" default="false" enable="eq(-8,true)" />
+    <setting label="30031" type="slider" subsetting="true" id="start_volume4" default="20" range="0,1,30" option="percent" enable="eq(-9,true) + eq(-1,true)" />
+    <setting label="30032" type="slider" subsetting="true" id="fadetime4" default="3" range="1,1,10" option="int" enable="eq(-10,true) + eq(-2,true)" />
+    <setting label="30018" type="bool" id="turnOff4" default="false" enable="eq(-11,true)" />
+    <setting label="30019" type="slider" subsetting="true" id="duration4" default="30" range="5, 5, 120" option="int" enable="eq(-1,true)" />
   </category>
   <category label="30005">
     <setting label="30014" type="bool" id="alarm5" default="false"/>
@@ -57,7 +69,10 @@
     <setting label="30013" type="file" id="file5" default="alert.mp3" visible="eq(-1,0)" enable="eq(-5,true)" />
     <setting label="30013" type="text" id="text5" default="" visible="eq(-2,1)" enable="eq(-6,true)" />
     <setting label="30009" type="slider" id="volume5" default="30" range="0, 5, 100" option="percent" enable="eq(-7,true)" />
-    <setting label="30018" type="bool" id="turnOff5" default="false" enable="eq(-8,true)" />
-    <setting label="30019" type="slider" id="duration5" default="30" range="5, 5, 120" option="int" enable="eq(-1,true)" />
+    <setting label="30030" type="bool" id="fade5" default="false" enable="eq(-8,true)" />
+    <setting label="30031" type="slider" subsetting="true" id="start_volume5" default="20" range="0,1,30" option="percent" enable="eq(-9,true) + eq(-1,true)" />
+    <setting label="30032" type="slider" subsetting="true" id="fadetime5" default="3" range="1,1,10" option="int" enable="eq(-10,true) + eq(-2,true)" />
+    <setting label="30018" type="bool" id="turnOff5" default="false" enable="eq(-11,true)" />
+    <setting label="30019" type="slider" subsetting="true" id="duration5" default="30" range="5, 5, 120" option="int" enable="eq(-1,true)" />
   </category>
 </settings>
