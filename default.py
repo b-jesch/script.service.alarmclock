@@ -71,12 +71,21 @@ def get_jobs(number):
                       fadetime])]
 
     if addon.getSetting("turnOff%d" % number) == "true":
+        hours = int(addon.getSetting("hour%d" % number)) + (int(addon.getSetting("duration%d" % number)) // 60)
+        minutes = int(addon.getSetting("minute%d" % number)) + int(addon.getSetting("duration%d" % number)) % 60
+
+        # calculate hour  and day overflow
+
+        if minutes > 59:
+            hours = hours + 1
+            minutes = minutes - 60
+        if hours > 23:
+            hours = hours - 24
+
         jobs.append(Job(number,
                         _stop_playing,
-                        int(addon.getSetting("minute%d" % number)) +
-                        (int(addon.getSetting("duration%d" % number)) % 60),
-                        int(addon.getSetting("hour%d" % number)) +
-                        (int(addon.getSetting("duration%d" % number)) / 60),
+                        minutes,
+                        hours,
                         dow=days_of_week))
     return jobs
 
