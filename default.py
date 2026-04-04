@@ -43,10 +43,9 @@ def get_jobs(number):
     are returned in the list.
     """
     days_of_week = int(addon.getSetting("day%d" % number))
-    if days_of_week == 7:
-        days_of_week = range(5)
-    if days_of_week == 8:
-        days_of_week = range(7)
+    if days_of_week == 7: days_of_week = range(1,6)
+    elif days_of_week == 8: days_of_week = range(1,8)
+    else: days_of_week = range(days_of_week,days_of_week + 1)
 
     fade = True if addon.getSetting("fade%d" % number).lower() == "true" else False
     startvolume = int(addon.getSetting("start_volume%d" % number))
